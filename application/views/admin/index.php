@@ -46,9 +46,9 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url() ?>assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url() ?>assets/uploads/profile_pict/<?php echo $this->session->userdata('foto_profil'); ?>" class="img-circle" alt="Avatar"> <span><?php echo $this->session->userdata('nama_admin') ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+								<li><a href="<?php echo base_url() ?>index.php/login/logout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
 					</ul>
@@ -98,6 +98,28 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
+					<?php 
+						$success = $this->session->flashdata('success');
+						$failed = $this->session->flashdata('failed');
+
+						if (!empty($failed)) {
+							echo '
+								<div class="alert alert-danger alert-dismissible" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<i class="fa fa-times-circle"></i> '.$failed.'
+								</div>
+							';
+						}
+
+						if (!empty($success)) {
+							echo '
+								<div class="alert alert-success alert-dismissible" role="alert">
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<i class="fa fa-check-circle"></i> '.$success.'
+								</div>
+							';
+						}
+					?>
 					<!-- OVERVIEW -->
 					<?php 
 						$this->load->view($main_view);

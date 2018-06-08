@@ -29,24 +29,40 @@
 				<div class="auth-box ">
 					<div class="left">
 						<div class="content">
+							<?php 
+								$success = $this->session->flashdata('success');
+								$failed = $this->session->flashdata('failed');
+
+								if (!empty($failed)) {
+									echo '
+										<div class="alert alert-danger alert-dismissible" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<i class="fa fa-times-circle"></i> '.$failed.'
+										</div>
+									';
+								}
+
+								if (!empty($success)) {
+									echo '
+										<div class="alert alert-success alert-dismissible" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<i class="fa fa-check-circle"></i> '.$success.'
+										</div>
+									';
+								}
+							?>
 							<div class="header">
 								<div class="logo text-center"><img src="<?php echo base_url() ?>assets/img/logo-dark.png" alt="Klorofil Logo"></div>
 								<p class="lead">Login to your account</p>
 							</div>
-							<form class="form-auth-small" action="index.php">
+							<form method="post" class="form-auth-small" action="<?php echo base_url()?>index.php/login/login">
 								<div class="form-group">
-									<label for="signin-email" class="control-label sr-only">Email</label>
-									<input type="email" class="form-control" id="signin-email" value="samuel.gold@domain.com" placeholder="Email">
+									<label for="signin-email" class="control-label sr-only">Username</label>
+									<input type="text" name="username" class="form-control" id="signin-email"  placeholder="Username">
 								</div>
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">Password</label>
-									<input type="password" class="form-control" id="signin-password" value="thisisthepassword" placeholder="Password">
-								</div>
-								<div class="form-group clearfix">
-									<label class="fancy-checkbox element-left">
-										<input type="checkbox">
-										<span>Remember me</span>
-									</label>
+									<input type="password" name="password" class="form-control" id="signin-password" placeholder="Password">
 								</div>
 								<button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
 								<div class="bottom">

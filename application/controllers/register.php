@@ -11,8 +11,14 @@ class Register extends CI_Controller {
 
 	public function index()
 	{
-		$data['main_view'] = 'admin/register_view';
-		$this->load->view('admin/index', $data);		
+		if ($this->session->userdata('logged_in') == TRUE) {
+			$data['main_view'] = 'admin/register_view';
+			$this->load->view('admin/index', $data);
+		} else {
+			redirect('login');
+		}
+		
+					
 	}
 
 }
