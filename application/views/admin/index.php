@@ -139,12 +139,28 @@
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
+
 	<script src="<?php echo base_url(); ?>assets/vendor/jquery/jquery.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/scripts/klorofil-common.js"></script>
+	<script type="text/javascript">
+	  function prepare_update_iklan(id_informasi) {
+	    $('#id_informasi').empty();
+	    $('#nama_informasi').empty();
+	    $('#foto_iklan').empty();
+	  
+
+	  $.getJSON('<?php echo base_url(); ?>index.php/iklan/get_iklan_by_id/' + id_informasi, function(data) {
+	    $('#id_informasi').val(data.id_informasi);
+	    $('#nama_informasi').val(data.nama_informasi);
+	    $('#foto_iklan').val(data.gambar);
+	  });
+	}
+
+	</script>
 </body>
 
 </html>

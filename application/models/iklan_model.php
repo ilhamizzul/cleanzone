@@ -13,6 +13,7 @@ class Iklan_model extends CI_Model {
 						->result();
 	}
 
+
 	public function tambah_iklan($foto_iklan)
 	{
 		$data = array(
@@ -40,6 +41,47 @@ class Iklan_model extends CI_Model {
 			return FALSE;
 		}
 		
+	}
+
+
+	public function get_iklan_by_id($id_informasi)
+	{
+		return $this->db->where('id_informasi', $id_informasi)
+						->get('tb_info')
+						->row();
+	}
+
+	public function ubah_iklan_with_foto($foto_iklan)
+	{
+		$data = array(
+			'nama_informasi' => $this->input->post('nama_informasi'),
+			'gambar' => $foto_iklan['file_name'] 
+		);
+
+		$this->db->where('id_informasi', $this->input->post('id_informasi'))
+				->update('tb_info', $data);
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+
+	public function ubah_iklan()
+	{
+		$data = array(
+			'nama_informasi' => $this->input->post('nama_informasi')
+		);
+
+		$this->db->where('id_informasi', $this->input->post('id_informasi'))
+				->update('tb_info', $data);
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
 	}
 
 }

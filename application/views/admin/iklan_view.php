@@ -27,9 +27,9 @@
                         <a href="'.base_url().'assets/uploads/iklan/'.$data->gambar.'" target="_blank" class="btn btn-xs btn-primary">
                            Lihat Gambar
                         </a>
-                        <a href="" class="btn btn-xs btn-warning">
+                        <button type="button" data-toggle="modal" onclick="prepare_update_iklan('.$data->id_informasi.')" data-target="#edit_iklan" class="btn btn-xs btn-warning">
                            Edit
-                        </a>
+                        </button>
                         <button type="button" data-toggle="modal" data-target="#hapus_'.$data->id_informasi.'" class="btn btn-xs btn-danger">
                            Hapus
                         </button>
@@ -69,6 +69,33 @@
      </div>
  </div>
 </div>
+
+<div class="modal fade" id="edit_iklan" tabindex="-1" role="dialog">
+ <div class="modal-dialog" role="document">
+     <div class="modal-content col-md-12">
+         <div class="modal-header">
+             <h4 class="modal-title" id="defaultModalLabel">Ubah Iklan</h4>
+         </div>
+         <div class="modal-body col-md-12">
+            <form method="post" action="<?php echo base_url() ?>index.php/iklan/ubah_iklan" enctype="multipart/form-data">
+              <input type="hidden" name="id_informasi" id="id_informasi" >
+              <div class="form-group col-md-12">
+                      <label>Judul Iklan</label>
+                        <input type="text" class="form-control" required id="nama_informasi" name="nama_informasi" placeholder="Judul Iklan . . ." />
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Gambar Iklan(*JPG)</label>
+                    <input type="file" class="form-control" id="foto_iklan" name="foto_iklan">
+                </div>
+                <input type="submit" class="btn btn-success col-md-6" value="Submit" name="">
+                <button type="button" class="btn btn-info col-md-6" data-dismiss="modal">Tutup</button>
+
+            </form>
+         </div>
+     </div>
+ </div>
+</div>
+
 <?php 
   foreach ($get_iklan as $data) {
     echo '
@@ -92,5 +119,7 @@
     ';
   }
 ?>
+
+
       
 <!-- END BORDERED TABLE -->
