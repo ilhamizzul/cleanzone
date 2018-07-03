@@ -63,7 +63,6 @@ class Iklan extends CI_Controller {
 		} else {
 			redirect('login');
 		}
-		
 	}
 
 	public function ubah_iklan()

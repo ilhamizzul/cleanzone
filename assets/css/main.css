@@ -173,7 +173,9 @@ html.fullscreen-bg #wrapper {
     background-color: #f8f8f8; }
   .navbar-default .brand {
     float: left;
-    padding: 30px 39px;
+    padding: 25px 39px;
+    width: 250px;
+    height: auto;
     background-color: #fff; }
   @media screen and (max-width: 1024px) {
     .navbar-default .brand {
@@ -181,10 +183,13 @@ html.fullscreen-bg #wrapper {
       padding-right: 15px; } }
   @media screen and (max-width: 992px) {
     .navbar-default .brand {
-      display: none; } }
+      /*display: none;*/ } }
   @media screen and (max-width: 640px) {
     .navbar-default #navbar-menu {
-      float: right; } }
+      float: right; } 
+      .brand {
+        display: none;
+        }}
 
 .navbar-btn {
   float: left;
@@ -1070,7 +1075,8 @@ ul.activity-list > li {
     width: 50%;
     padding: 40px 60px; }
     .auth-box.lockscreen .logo {
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+       }
     .auth-box.lockscreen .user {
       margin-bottom: 30px; }
       .auth-box.lockscreen .user .name {

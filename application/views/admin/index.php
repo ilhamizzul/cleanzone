@@ -28,7 +28,7 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="index.html"><img src="<?php echo base_url() ?>assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+				<a href="index.html"><img src="<?php echo base_url() ?>assets/img/logoo.png" alt="Klorofil Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -79,7 +79,8 @@
 								</ul>
 							</div>
 						</li>
-						<li>
+						<li><a href="<?php echo base_url() ?>index.php/galeri"><i class="lnr lnr-camera"></i> <span>Galeri</span></a></li>
+						<!-- <li>
 							<a href="#subPages3" data-toggle="collapse" class="collapsed"><i class="lnr lnr-pencil"></i> <span>Data Registrasi</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages3" class="collapse ">
 								<ul class="nav">
@@ -87,7 +88,7 @@
 									<li><a href="page-login.html" class="">Registrasi B</a></li>
 								</ul>
 							</div>
-						</li>
+						</li> -->
 					</ul>
 				</nav>
 			</div>
@@ -151,12 +152,23 @@
 	    $('#id_informasi').empty();
 	    $('#nama_informasi').empty();
 	    $('#foto_iklan').empty();
-	  
 
 	  $.getJSON('<?php echo base_url(); ?>index.php/iklan/get_iklan_by_id/' + id_informasi, function(data) {
 	    $('#id_informasi').val(data.id_informasi);
 	    $('#nama_informasi').val(data.nama_informasi);
 	    $('#foto_iklan').val(data.gambar);
+	  });
+	}
+
+	function prepare_update_promosi(id_informasi) {
+	    $('#id_informasi').empty();
+	    $('#nama_informasi').empty();
+	    $('#foto_promosi').empty();
+
+	  $.getJSON('<?php echo base_url(); ?>index.php/promosi/get_promosi_by_id/' + id_informasi, function(data) {
+	    $('#id_informasi').val(data.id_informasi);
+	    $('#nama_informasi').val(data.nama_informasi);
+	    $('#foto_promosi').val(data.gambar);
 	  });
 	}
 

@@ -8,29 +8,28 @@
       <table class="table table-bordered">
          <thead>
             <tr>
-               <th class="col-md-1">No</th>
-               <th class="col-md-2">Nama Promosi</th>
+               <th class="col-md-1">Deskripsi</th>
+               <th class="col-md-2">Sub Deskripsi</th>
                <th class="col-md-3">Gambar</th>
                <th class="col-md-2">Aksi</th>
             </tr>
          </thead>
          <tbody>
             <?php 
-              $no = 1;
-              foreach ($get_promosi as $data) {
+              foreach ($get_galeri as $data) {
                 echo '
                   <tr>
-                     <td>'.$no++.'</td>
-                     <td>'.$data->nama_informasi.'</td>
-                     <td><img src="'.base_url().'assets/uploads/promosi/'.$data->gambar.'" style="max-width: 100%; height: auto;"></td>
+                     <td>'.$data->deskripsi.'</td>
+                     <td>'.$data->sub_deskripsi.'</td>
+                     <td><img src="'.base_url().'assets/uploads/galeri/'.$data->gambar.'" style="max-width: 100%; height: auto;"></td>
                      <td>
-                        <a href="'.base_url().'assets/uploads/promosi/'.$data->gambar.'" target="_blank" class="btn btn-xs btn-primary">
+                        <a href="'.base_url().'assets/uploads/galeri/'.$data->gambar.'" target="_blank" class="btn btn-xs btn-primary">
                            Lihat Gambar
                         </a>
-                       <button type="button" data-toggle="modal" onclick="prepare_update_promosi('.$data->id_informasi.')" data-target="#edit_promosi" class="btn btn-xs btn-warning">
+                       <button type="button" data-toggle="modal" onclick="" data-target="#edit_promosi" class="btn btn-xs btn-warning">
                            Edit
                         </button>
-                        <button type="button" data-toggle="modal" data-target="#hapus_'.$data->id_informasi.'" class="btn btn-xs btn-danger">
+                        <button type="button" data-toggle="modal" data-target="#hapus_'.$data->id_gambar.'" class="btn btn-xs btn-danger">
                            Hapus
                         </button>
                      </td>
@@ -73,7 +72,7 @@
 <?php 
   foreach ($get_promosi as $data) {
     echo '
-      <div class="modal fade" id="hapus_'.$data->id_informasi.'" tabindex="-1" role="dialog">
+      <div class="modal fade" id="hapus_'.$data->id_gambar.'" tabindex="-1" role="dialog">
          <div class="modal-dialog" role="document">
              <div class="modal-content">
                  <div class="modal-header">
