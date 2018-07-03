@@ -30,7 +30,7 @@
                         <button type="button" data-toggle="modal" onclick="prepare_update_iklan('.$data->id_informasi.')" data-target="#edit_iklan" class="btn btn-xs btn-warning">
                            Edit
                         </button>
-                        <button type="button" data-toggle="modal" data-target="#hapus_'.$data->id_informasi.'" class="btn btn-xs btn-danger">
+                        <button type="button" data-toggle="modal" data-target="#hapus_iklan" onclick="prepare_delete_iklan('.$data->id_informasi.')" class="btn btn-xs btn-danger">
                            Hapus
                         </button>
                      </td>
@@ -78,14 +78,17 @@
          </div>
          <div class="modal-body col-md-12">
             <form method="post" action="<?php echo base_url() ?>index.php/iklan/ubah_iklan" enctype="multipart/form-data">
-              <input type="hidden" name="id_informasi" id="id_informasi" >
+              <input type="hidden" name="id_informasi" id="update_id_informasi_iklan" >
               <div class="form-group col-md-12">
                       <label>Judul Iklan</label>
-                        <input type="text" class="form-control" required id="nama_informasi" name="nama_informasi" placeholder="Judul Iklan . . ." />
+                        <input type="text" class="form-control" required id="update_nama_informasi_iklan" name="nama_informasi" placeholder="Judul Iklan . . ." />
                 </div>
                 <div class="form-group col-md-12">
                     <label>Gambar Iklan(*JPG)</label>
-                    <input type="file" class="form-control" id="foto_iklan" name="foto_iklan">
+                    <input type="file" required class="form-control" name="foto_iklan">
+                </div>
+                <div class="form-group col-md-12">
+                  <img src="" id="update_foto_iklan" style="max-width: 100%; height: auto;">
                 </div>
                 <input type="submit" class="btn btn-success col-md-6" value="Submit" name="">
                 <button type="button" class="btn btn-info col-md-6" data-dismiss="modal">Tutup</button>
@@ -96,10 +99,7 @@
  </div>
 </div>
 
-<?php 
-  foreach ($get_iklan as $data) {
-    echo '
-      <div class="modal fade" id="hapus_'.$data->id_informasi.'" tabindex="-1" role="dialog">
+      <div class="modal fade" id="hapus_iklan" tabindex="-1" role="dialog">
        <div class="modal-dialog" role="document">
            <div class="modal-content">
                <div class="modal-header">
@@ -107,18 +107,15 @@
                </div>
                <div class="modal-body">
                    Apakah Anda Yakin Ingin Menghapus Info Iklan Ini?
-                   <center><img src="'.base_url().'assets/uploads/iklan/'.$data->gambar.'" style="max-width:75%;height:auto;"></center>
+                   <center><img src="" id="delete_foto_iklan" style="max-width:75%;height:auto;"></center>
                </div>
                <div class="modal-footer">
-                   <a href="'.base_url().'index.php/iklan/delete/'.$data->id_informasi.'" class="btn btn-danger btn-xs">hapus</a>
+                   <a href="" id="delete_id_informasi_iklan" class="btn btn-danger btn-xs">Hapus</a>
                    <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Tutup</button>
                </div>
            </div>
        </div>
       </div> 
-    ';
-  }
-?>
 
 
       

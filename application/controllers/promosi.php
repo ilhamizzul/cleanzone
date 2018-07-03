@@ -76,9 +76,6 @@ class Promosi extends CI_Controller {
 				}
 			}
 			else{
-				// $data = array('upload_data' => $this->upload->data());
-				// echo "success";
-
 				if ($this->promosi_model->ubah_promosi_with_foto($this->upload->data()) == TRUE) {
 					$this->session->set_flashdata('success', 'Ubah Data Promosi Berhasil');
 					redirect('promosi');

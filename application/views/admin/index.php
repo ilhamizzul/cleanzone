@@ -62,6 +62,7 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="<?php echo base_url() ?>index.php/dashboard"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="<?php echo base_url() ?>index.php/galeri"><i class="lnr lnr-camera"></i> <span>Galeri</span></a></li>
 						<li>
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-cart"></i> <span>Order</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
@@ -79,7 +80,7 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="<?php echo base_url() ?>index.php/galeri"><i class="lnr lnr-camera"></i> <span>Galeri</span></a></li>
+						
 						<!-- <li>
 							<a href="#subPages3" data-toggle="collapse" class="collapsed"><i class="lnr lnr-pencil"></i> <span>Data Registrasi</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages3" class="collapse ">
@@ -148,30 +149,75 @@
 	<script src="<?php echo base_url(); ?>assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/scripts/klorofil-common.js"></script>
 	<script type="text/javascript">
-	  function prepare_update_iklan(id_informasi) {
-	    $('#id_informasi').empty();
-	    $('#nama_informasi').empty();
-	    $('#foto_iklan').empty();
+	//IKLAN
+		function prepare_update_iklan(id_informasi) {
+		    $('#update_id_informasi_iklan').empty();
+		    $('#update_nama_informasi_iklan').empty();
+		    $('#update_foto_iklan').empty();
 
-	  $.getJSON('<?php echo base_url(); ?>index.php/iklan/get_iklan_by_id/' + id_informasi, function(data) {
-	    $('#id_informasi').val(data.id_informasi);
-	    $('#nama_informasi').val(data.nama_informasi);
-	    $('#foto_iklan').val(data.gambar);
-	  });
-	}
+		  $.getJSON('<?php echo base_url(); ?>index.php/iklan/get_iklan_by_id/' + id_informasi, function(data) {
+		    $('#update_id_informasi_iklan').val(data.id_informasi);
+		    $('#update_nama_informasi_iklan').val(data.nama_informasi);
+		    $('#update_foto_iklan').attr('src', '<?php echo base_url('assets/uploads/iklan/') ?>'+data.gambar);
+		  });
+		}
 
-	function prepare_update_promosi(id_informasi) {
-	    $('#id_informasi').empty();
-	    $('#nama_informasi').empty();
-	    $('#foto_promosi').empty();
+		function prepare_delete_iklan(id_informasi) {
+			$('#delete_foto_iklan').empty();
 
-	  $.getJSON('<?php echo base_url(); ?>index.php/promosi/get_promosi_by_id/' + id_informasi, function(data) {
-	    $('#id_informasi').val(data.id_informasi);
-	    $('#nama_informasi').val(data.nama_informasi);
-	    $('#foto_promosi').val(data.gambar);
-	  });
-	}
+			$.getJSON('<?php echo base_url() ?>index.php/iklan/get_iklan_by_id/' + id_informasi, function(data) {
+				$('#delete_id_informasi_iklan').attr('href', '<?php echo base_url('index.php/iklan/delete/') ?>'+data.id_informasi);
+				$('#delete_foto_iklan').attr('src', '<?php echo base_url('assets/uploads/iklan/') ?>'+data.gambar);
+			});
+		}
 
+	//PROMOSI
+		function prepare_update_promosi(id_informasi) {
+		    $('#update_id_informasi_promosi').empty();
+		    $('#update_nama_informasi_promosi').empty();
+		    $('#update_foto_promosi').empty();
+
+		  $.getJSON('<?php echo base_url(); ?>index.php/promosi/get_promosi_by_id/' + id_informasi, function(data) {
+		    $('#update_id_informasi_promosi').val(data.id_informasi);
+		    $('#update_nama_informasi_promosi').val(data.nama_informasi);
+		    $('#update_foto_promosi').attr('src', '<?php echo base_url('assets/uploads/promosi/') ?>'+data.gambar);
+		  });
+		}
+
+		function prepare_delete_promosi(id_informasi) {
+			$('#delete_foto_promosi').empty();
+
+			$.getJSON('<?php echo base_url() ?>index.php/promosi/get_promosi_by_id/' + id_informasi, function(data) {
+				$('#delete_id_informasi_promosi').attr('href', '<?php echo base_url('index.php/promosi/delete/') ?>'+data.id_informasi);
+				$('#delete_foto_promosi').attr('src', '<?php echo base_url('assets/uploads/promosi/') ?>'+data.gambar);
+			});
+		}
+
+	//GALERI
+		function prepare_update_galeri(id_gambar) {
+		    $('#update_id_gambar').empty();
+		    $('#update_deskripsi_galeri').empty();
+		    $('#update_sub_deskripsi_galeri').empty();
+		    $('#update_foto_galeri').empty();
+
+
+		  $.getJSON('<?php echo base_url(); ?>index.php/galeri/get_gambar_by_id/' + id_gambar, function(data) {
+		    $('#update_id_gambar').val(data.id_gambar);
+		    $('#update_deskripsi_galeri').val(data.deskripsi);
+		    $('#update_sub_deskripsi_galeri').val(data.sub_deskripsi);
+		    $('#update_foto_galeri').attr('src', '<?php echo base_url('assets/uploads/galeri/') ?>'+data.gambar);
+
+		  });
+		}
+
+		function prepare_delete_galeri(id_gambar) {
+			$('#delete_foto_galeri').empty();
+
+			$.getJSON('<?php echo base_url() ?>index.php/galeri/get_gambar_by_id/' + id_gambar, function (data) {
+				$('#delete_foto_galeri').attr('src', '<?php echo base_url('assets/uploads/galeri/') ?>' + data.gambar);
+				$('#delete_id_gambar').attr('href', '<?php echo base_url('index.php/galeri/hapus/') ?>' + data.id_gambar);
+			})
+		}
 	</script>
 </body>
 
