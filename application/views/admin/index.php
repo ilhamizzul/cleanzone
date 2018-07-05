@@ -19,7 +19,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url(); ?>assets/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url(); ?>assets/img/favicon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url() ?>assets/img/client/logo.png">
 </head>
 
 <body>
@@ -48,7 +48,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url() ?>assets/uploads/profile_pict/<?php echo $this->session->userdata('foto_profil'); ?>" class="img-circle" alt="Avatar"> <span><?php echo $this->session->userdata('nama_admin') ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="<?php echo base_url() ?>index.php/login/logout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+								<li><a href="<?php echo base_url() ?>login/logout"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
 					</ul>
@@ -61,8 +61,8 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="<?php echo base_url() ?>index.php/dashboard"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="<?php echo base_url() ?>index.php/galeri"><i class="lnr lnr-camera"></i> <span>Galeri</span></a></li>
+						<li><a href="<?php echo base_url() ?>dashboard"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="<?php echo base_url() ?>galeri"><i class="lnr lnr-camera"></i> <span>Galeri</span></a></li>
 						<li>
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-cart"></i> <span>Order</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
@@ -75,8 +75,8 @@
 							<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-rocket"></i> <span>Info</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages2" class="collapse ">
 								<ul class="nav">
-									<li><a href="<?php echo base_url() ?>index.php/promosi" class="">Promosi</a></li>
-									<li><a href="<?php echo base_url() ?>index.php/iklan" class="">Iklan</a></li>
+									<li><a href="<?php echo base_url() ?>promosi" class="">Promosi</a></li>
+									<li><a href="<?php echo base_url() ?>iklan" class="">Iklan</a></li>
 								</ul>
 							</div>
 						</li>
@@ -155,7 +155,7 @@
 		    $('#update_nama_informasi_iklan').empty();
 		    $('#update_foto_iklan').empty();
 
-		  $.getJSON('<?php echo base_url(); ?>index.php/iklan/get_iklan_by_id/' + id_informasi, function(data) {
+		  $.getJSON('<?php echo base_url(); ?>iklan/get_iklan_by_id/' + id_informasi, function(data) {
 		    $('#update_id_informasi_iklan').val(data.id_informasi);
 		    $('#update_nama_informasi_iklan').val(data.nama_informasi);
 		    $('#update_foto_iklan').attr('src', '<?php echo base_url('assets/uploads/iklan/') ?>'+data.gambar);
@@ -165,7 +165,7 @@
 		function prepare_delete_iklan(id_informasi) {
 			$('#delete_foto_iklan').empty();
 
-			$.getJSON('<?php echo base_url() ?>index.php/iklan/get_iklan_by_id/' + id_informasi, function(data) {
+			$.getJSON('<?php echo base_url() ?>iklan/get_iklan_by_id/' + id_informasi, function(data) {
 				$('#delete_id_informasi_iklan').attr('href', '<?php echo base_url('index.php/iklan/delete/') ?>'+data.id_informasi);
 				$('#delete_foto_iklan').attr('src', '<?php echo base_url('assets/uploads/iklan/') ?>'+data.gambar);
 			});
@@ -177,7 +177,7 @@
 		    $('#update_nama_informasi_promosi').empty();
 		    $('#update_foto_promosi').empty();
 
-		  $.getJSON('<?php echo base_url(); ?>index.php/promosi/get_promosi_by_id/' + id_informasi, function(data) {
+		  $.getJSON('<?php echo base_url(); ?>promosi/get_promosi_by_id/' + id_informasi, function(data) {
 		    $('#update_id_informasi_promosi').val(data.id_informasi);
 		    $('#update_nama_informasi_promosi').val(data.nama_informasi);
 		    $('#update_foto_promosi').attr('src', '<?php echo base_url('assets/uploads/promosi/') ?>'+data.gambar);
@@ -187,7 +187,7 @@
 		function prepare_delete_promosi(id_informasi) {
 			$('#delete_foto_promosi').empty();
 
-			$.getJSON('<?php echo base_url() ?>index.php/promosi/get_promosi_by_id/' + id_informasi, function(data) {
+			$.getJSON('<?php echo base_url() ?>promosi/get_promosi_by_id/' + id_informasi, function(data) {
 				$('#delete_id_informasi_promosi').attr('href', '<?php echo base_url('index.php/promosi/delete/') ?>'+data.id_informasi);
 				$('#delete_foto_promosi').attr('src', '<?php echo base_url('assets/uploads/promosi/') ?>'+data.gambar);
 			});
@@ -201,7 +201,7 @@
 		    $('#update_foto_galeri').empty();
 
 
-		  $.getJSON('<?php echo base_url(); ?>index.php/galeri/get_gambar_by_id/' + id_gambar, function(data) {
+		  $.getJSON('<?php echo base_url(); ?>galeri/get_gambar_by_id/' + id_gambar, function(data) {
 		    $('#update_id_gambar').val(data.id_gambar);
 		    $('#update_deskripsi_galeri').val(data.deskripsi);
 		    $('#update_sub_deskripsi_galeri').val(data.sub_deskripsi);
@@ -213,7 +213,7 @@
 		function prepare_delete_galeri(id_gambar) {
 			$('#delete_foto_galeri').empty();
 
-			$.getJSON('<?php echo base_url() ?>index.php/galeri/get_gambar_by_id/' + id_gambar, function (data) {
+			$.getJSON('<?php echo base_url() ?>galeri/get_gambar_by_id/' + id_gambar, function (data) {
 				$('#delete_foto_galeri').attr('src', '<?php echo base_url('assets/uploads/galeri/') ?>' + data.gambar);
 				$('#delete_id_gambar').attr('href', '<?php echo base_url('index.php/galeri/hapus/') ?>' + data.id_gambar);
 			})

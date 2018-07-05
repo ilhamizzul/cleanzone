@@ -50,7 +50,7 @@
              <h4 class="modal-title" id="defaultModalLabel">Tambah Promosi</h4>
          </div>
          <div class="modal-body col-md-12">
-            <form method="post" action="<?php echo base_url() ?>index.php/promosi/tambah" enctype="multipart/form-data">
+            <form method="post" action="<?php echo base_url() ?>promosi/tambah" enctype="multipart/form-data">
               <input type="hidden" name="tipe" value="promosi">
               <div class="form-group col-md-12">
                       <label>Judul Promosi</label>
@@ -95,7 +95,7 @@
              <h4 class="modal-title" id="defaultModalLabel">Ubah Promosi</h4>
          </div>
          <div class="modal-body col-md-12">
-            <form method="post" action="<?php echo base_url() ?>index.php/promosi/ubah_promosi" enctype="multipart/form-data">
+            <form method="post" action="<?php echo base_url() ?>promosi/ubah_promosi" enctype="multipart/form-data">
               <input type="hidden" name="id_informasi" id="update_id_informasi_promosi" >
               <div class="form-group col-md-12">
                       <label>Judul Promosi</label>

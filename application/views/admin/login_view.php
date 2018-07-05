@@ -55,7 +55,7 @@
 								<div class="logo text-center"><img src="<?php echo base_url() ?>assets/img/logo-dark.png" alt="Klorofil Logo"></div>
 								<p class="lead">Login to your account</p>
 							</div>
-							<form method="post" class="form-auth-small" action="<?php echo base_url()?>index.php/login/login">
+							<form method="post" class="form-auth-small" action="<?php echo base_url()?>login/login">
 								<div class="form-group">
 									<label for="signin-email" class="control-label sr-only">Username</label>
 									<input type="text" name="username" class="form-control" id="signin-email"  placeholder="Username">

@@ -49,7 +49,7 @@
              <h4 class="modal-title" id="defaultModalLabel">Tambah Galeri Foto</h4>
          </div>
          <div class="modal-body col-md-12">
-            <form method="post" action="<?php echo base_url() ?>index.php/galeri/tambah" enctype="multipart/form-data">
+            <form method="post" action="<?php echo base_url() ?>galeri/tambah" enctype="multipart/form-data">
               <div class="form-group col-md-12">
                       <label>Deskripsi Gambar</label>
                         <input type="text" class="form-control" required name="deskripsi" placeholder="Deskripsi Gambar . . ." />
@@ -97,7 +97,7 @@
              <h4 class="modal-title" id="defaultModalLabel">Ubah Gambar</h4>
          </div>
          <div class="modal-body col-md-12">
-            <form method="post" action="<?php echo base_url() ?>index.php/galeri/ubah_gambar" enctype="multipart/form-data">
+            <form method="post" action="<?php echo base_url() ?>galeri/ubah_gambar" enctype="multipart/form-data">
               <input type="hidden" name="id_gambar" id="update_id_gambar" >
               <div class="form-group col-md-12">
                       <label>Deskripsi Gambar</label>

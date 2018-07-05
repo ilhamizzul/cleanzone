@@ -50,7 +50,7 @@
              <h4 class="modal-title" id="defaultModalLabel">Tambah Iklan</h4>
          </div>
          <div class="modal-body col-md-12">
-            <form method="post" action="<?php echo base_url() ?>index.php/iklan/tambah" enctype="multipart/form-data">
+            <form method="post" action="<?php echo base_url() ?>iklan/tambah" enctype="multipart/form-data">
               <input type="hidden" name="tipe" value="iklan">
               <div class="form-group col-md-12">
                       <label>Judul Iklan</label>
@@ -77,7 +77,7 @@
              <h4 class="modal-title" id="defaultModalLabel">Ubah Iklan</h4>
          </div>
          <div class="modal-body col-md-12">
-            <form method="post" action="<?php echo base_url() ?>index.php/iklan/ubah_iklan" enctype="multipart/form-data">
+            <form method="post" action="<?php echo base_url() ?>iklan/ubah_iklan" enctype="multipart/form-data">
               <input type="hidden" name="id_informasi" id="update_id_informasi_iklan" >
               <div class="form-group col-md-12">
                       <label>Judul Iklan</label>
