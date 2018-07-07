@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="1321 686 126.001 126.001">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        filter: url(#Exclusion_24);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d4af37"/>
+      <stop offset="0.502" stop-color="#cf9908"/>
+      <stop offset="0.523" stop-color="#dfaa17"/>
+      <stop offset="1" stop-color="#ffdd6e"/>
+    </linearGradient>
+    <filter id="Exclusion_24" x="1321" y="686" width="126.001" height="126.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-2" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <path id="Exclusion_24-2" data-name="Exclusion 24" class="cls-1" d="M-800,120a59.624,59.624,0,0,1-23.355-4.715,59.8,59.8,0,0,1-19.072-12.859,59.8,59.8,0,0,1-12.859-19.072A59.624,59.624,0,0,1-860,60a59.624,59.624,0,0,1,4.715-23.355,59.8,59.8,0,0,1,12.859-19.072A59.8,59.8,0,0,1-823.355,4.715,59.624,59.624,0,0,1-800,0a59.625,59.625,0,0,1,23.355,4.715,59.8,59.8,0,0,1,19.072,12.859,59.8,59.8,0,0,1,12.858,19.072A59.625,59.625,0,0,1-740,60a59.625,59.625,0,0,1-4.715,23.355,59.8,59.8,0,0,1-12.858,19.072,59.8,59.8,0,0,1-19.072,12.859A59.625,59.625,0,0,1-800,120Zm0-112.127A52.185,52.185,0,0,0-852.126,60,52.185,52.185,0,0,0-800,112.127,52.185,52.185,0,0,0-747.874,60,52.185,52.185,0,0,0-800,7.874ZM-810.357,81.23h0l-18.064-18.064,4.589-4.556,13.476,13.475,34.222-34.189,4.557,4.557-38.778,38.778Z" transform="translate(2184 688)"/>
+  </g>
+</svg>

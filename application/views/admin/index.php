@@ -28,7 +28,7 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="index.html"><img src="<?php echo base_url() ?>assets/img/logoo.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+				<a href="index.html"><img src="<?php echo base_url() ?>assets/img/logoo.png" alt="CleanLaundry Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -63,14 +63,7 @@
 					<ul class="nav">
 						<li><a href="<?php echo base_url() ?>dashboard"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						<li><a href="<?php echo base_url() ?>galeri"><i class="lnr lnr-camera"></i> <span>Galeri</span></a></li>
-						<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-cart"></i> <span>Order</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-							<div id="subPages" class="collapse ">
-								<ul class="nav">
-									<li><a href="page-profile.html" class="">Profile</a></li>
-								</ul>
-							</div>
-						</li>
+						<li><a href="<?php echo base_url() ?>order"><i class="lnr lnr-bookmark"></i> <span>Data Order</span></a></li>
 						<li>
 							<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-rocket"></i> <span>Info</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages2" class="collapse ">
@@ -171,6 +164,35 @@
 			});
 		}
 
+	//ORDER
+		function prepare_update_order(id_order) {
+			$('#id_order').empty();
+			$('#invoice_order').empty();
+			$('#alamat').empty();
+			$('#cash').empty();
+			$('#total').empty();
+			$('.invoice').empty();
+
+			$.getJSON('<?php echo base_url() ?>order/get_order_by_id/' + id_order, function(data) {
+				$('#id_order').val(data.id_order);
+				$('#invoice_order').val(data.invoice_order);
+				$('#alamat').text(data.alamat);
+				$('#cash').val(data.cash);
+				$('#total').val(data.total);
+				$('.invoice').text(data.invoice_order);
+			});
+		}
+
+		function prepare_delete_order(id_order) {
+			$('.invoice').empty();
+
+			$.getJSON('<?php echo base_url() ?>order/get_order_by_id/' + id_order, function(data) {
+				$('.invoice').text(data.invoice_order);
+				$('#delete_order').attr('href', '<?php echo base_url() ?>order/delete/'+data.id_order);
+
+			});
+		}
+
 	//PROMOSI
 		function prepare_update_promosi(id_informasi) {
 		    $('#update_id_informasi_promosi').empty();
@@ -183,6 +205,8 @@
 		    $('#update_foto_promosi').attr('src', '<?php echo base_url('assets/uploads/promosi/') ?>'+data.gambar);
 		  });
 		}
+
+		
 
 		function prepare_delete_promosi(id_informasi) {
 			$('#delete_foto_promosi').empty();

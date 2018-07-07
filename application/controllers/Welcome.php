@@ -6,12 +6,16 @@ class Welcome extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		//Do your magic here
+		$this->load->model('client/client_model');
+		$this->load->model('galeri_model');
 	}
 
 	public function index()
 	{
-		$this->load->view('client/index');	
+		$data['data_galeri'] = $this->galeri_model->get_galeri();
+		$data['data_iklan'] = $this->client_model->get_iklan();
+		$data['data_promosi'] = $this->client_model->get_promosi();
+		$this->load->view('client/index', $data);	
 	}
 
 }

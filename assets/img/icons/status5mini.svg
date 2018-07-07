@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="1313 464 44 44">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        filter: url(#Exclusion_27);
+      }
+
+      .cls-4 {
+        filter: url(#Ellipse_82);
+      }
+    </style>
+    <filter id="Ellipse_82" x="1313" y="464" width="44" height="44" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d4af37"/>
+      <stop offset="0.502" stop-color="#cf9908"/>
+      <stop offset="0.523" stop-color="#dfaa17"/>
+      <stop offset="1" stop-color="#ffdd6e"/>
+    </linearGradient>
+    <filter id="Exclusion_27" x="1313" y="464" width="44" height="44" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur-2"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_84" data-name="Group 84" transform="translate(860)">
+    <g class="cls-4" transform="matrix(1, 0, 0, 1, -860, 0)">
+      <circle id="Ellipse_82-2" data-name="Ellipse 82" class="cls-1" cx="19" cy="19" r="19" transform="translate(1316 466)"/>
+    </g>
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, -860, 0)">
+      <path id="Exclusion_27-2" data-name="Exclusion 27" class="cls-2" d="M19-692a18.875,18.875,0,0,1-13.435-5.565A18.876,18.876,0,0,1,0-711a18.876,18.876,0,0,1,5.565-13.435A18.876,18.876,0,0,1,19-730a18.876,18.876,0,0,1,13.435,5.565A18.876,18.876,0,0,1,38-711a18.876,18.876,0,0,1-5.565,13.435A18.875,18.875,0,0,1,19-692Zm0-35A16.018,16.018,0,0,0,3-711a16.018,16.018,0,0,0,16,16,16.018,16.018,0,0,0,16-16A16.018,16.018,0,0,0,19-727Zm-3.28,22.722h0L10-710l1.453-1.444,4.267,4.268L26.557-718,28-716.557,15.721-704.279Z" transform="translate(1316 1196)"/>
+    </g>
+  </g>
+</svg>
