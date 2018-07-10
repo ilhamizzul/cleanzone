@@ -72,6 +72,67 @@ class Order_model extends CI_Model {
 		
 	}
 
+//UBAH STATUS
+	public function ubah_status_menunggu($id)
+	{
+		$data = array('status' => 'dijemput' );
+
+		return $this->db->where('id_order', $id)
+						->update('tb_order' , $data);
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+		
+	}
+
+	public function ubah_status_dijemput($id)
+	{
+		$data = array('status' => 'proses' );
+
+		return $this->db->where('id_order', $id)
+						->update('tb_order', $data);
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+		
+	}
+
+	public function ubah_status_diproses($id)
+	{
+		$data = array('status' => 'diantar' );
+
+		return $this->db->where('id_order', $id)
+						->update('tb_order', $data);
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+		
+	}
+
+	public function ubah_status_diantar($id)
+	{
+		$data = array('status' => 'selesai' );
+
+		return $this->db->where('id_order', $id)
+						->update('tb_order', $data);
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+		
+	}
+
 }
 
 /* End of file order_model.php */

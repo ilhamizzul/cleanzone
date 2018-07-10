@@ -2,7 +2,10 @@
 <html lang="en">
 
 <head>
-	<title>Dashboard | Klorofil - Free Bootstrap Dashboard Template</title>
+	<title>
+		Clean Laundry | Admin
+			
+	</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -10,7 +13,6 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/linearicons/style.css">
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/vendor/chartist/css/chartist-custom.css">
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css">
 	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
@@ -62,8 +64,9 @@
 				<nav>
 					<ul class="nav">
 						<li><a href="<?php echo base_url() ?>dashboard"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
-						<li><a href="<?php echo base_url() ?>galeri"><i class="lnr lnr-camera"></i> <span>Galeri</span></a></li>
+						<li><a href="<?php echo base_url() ?>galeri"><i class="lnr lnr-picture"></i> <span>Data Galeri</span></a></li>
 						<li><a href="<?php echo base_url() ?>order"><i class="lnr lnr-bookmark"></i> <span>Data Order</span></a></li>
+						<li><a href="<?php echo base_url() ?>multi_marker"><i class="lnr lnr-location"></i> <span>Data Multi Lokasi</span></a></li>
 						<li>
 							<a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-rocket"></i> <span>Info</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages2" class="collapse ">
@@ -141,108 +144,9 @@
 	<script src="<?php echo base_url(); ?>assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/scripts/klorofil-common.js"></script>
-	<script type="text/javascript">
-	//IKLAN
-		function prepare_update_iklan(id_informasi) {
-		    $('#update_id_informasi_iklan').empty();
-		    $('#update_nama_informasi_iklan').empty();
-		    $('#update_foto_iklan').empty();
-
-		  $.getJSON('<?php echo base_url(); ?>iklan/get_iklan_by_id/' + id_informasi, function(data) {
-		    $('#update_id_informasi_iklan').val(data.id_informasi);
-		    $('#update_nama_informasi_iklan').val(data.nama_informasi);
-		    $('#update_foto_iklan').attr('src', '<?php echo base_url('assets/uploads/iklan/') ?>'+data.gambar);
-		  });
-		}
-
-		function prepare_delete_iklan(id_informasi) {
-			$('#delete_foto_iklan').empty();
-
-			$.getJSON('<?php echo base_url() ?>iklan/get_iklan_by_id/' + id_informasi, function(data) {
-				$('#delete_id_informasi_iklan').attr('href', '<?php echo base_url('index.php/iklan/delete/') ?>'+data.id_informasi);
-				$('#delete_foto_iklan').attr('src', '<?php echo base_url('assets/uploads/iklan/') ?>'+data.gambar);
-			});
-		}
-
-	//ORDER
-		function prepare_update_order(id_order) {
-			$('#id_order').empty();
-			$('#invoice_order').empty();
-			$('#alamat').empty();
-			$('#cash').empty();
-			$('#total').empty();
-			$('.invoice').empty();
-
-			$.getJSON('<?php echo base_url() ?>order/get_order_by_id/' + id_order, function(data) {
-				$('#id_order').val(data.id_order);
-				$('#invoice_order').val(data.invoice_order);
-				$('#alamat').text(data.alamat);
-				$('#cash').val(data.cash);
-				$('#total').val(data.total);
-				$('.invoice').text(data.invoice_order);
-			});
-		}
-
-		function prepare_delete_order(id_order) {
-			$('.invoice').empty();
-
-			$.getJSON('<?php echo base_url() ?>order/get_order_by_id/' + id_order, function(data) {
-				$('.invoice').text(data.invoice_order);
-				$('#delete_order').attr('href', '<?php echo base_url() ?>order/delete/'+data.id_order);
-
-			});
-		}
-
-	//PROMOSI
-		function prepare_update_promosi(id_informasi) {
-		    $('#update_id_informasi_promosi').empty();
-		    $('#update_nama_informasi_promosi').empty();
-		    $('#update_foto_promosi').empty();
-
-		  $.getJSON('<?php echo base_url(); ?>promosi/get_promosi_by_id/' + id_informasi, function(data) {
-		    $('#update_id_informasi_promosi').val(data.id_informasi);
-		    $('#update_nama_informasi_promosi').val(data.nama_informasi);
-		    $('#update_foto_promosi').attr('src', '<?php echo base_url('assets/uploads/promosi/') ?>'+data.gambar);
-		  });
-		}
-
-		
-
-		function prepare_delete_promosi(id_informasi) {
-			$('#delete_foto_promosi').empty();
-
-			$.getJSON('<?php echo base_url() ?>promosi/get_promosi_by_id/' + id_informasi, function(data) {
-				$('#delete_id_informasi_promosi').attr('href', '<?php echo base_url('index.php/promosi/delete/') ?>'+data.id_informasi);
-				$('#delete_foto_promosi').attr('src', '<?php echo base_url('assets/uploads/promosi/') ?>'+data.gambar);
-			});
-		}
-
-	//GALERI
-		function prepare_update_galeri(id_gambar) {
-		    $('#update_id_gambar').empty();
-		    $('#update_deskripsi_galeri').empty();
-		    $('#update_sub_deskripsi_galeri').empty();
-		    $('#update_foto_galeri').empty();
-
-
-		  $.getJSON('<?php echo base_url(); ?>galeri/get_gambar_by_id/' + id_gambar, function(data) {
-		    $('#update_id_gambar').val(data.id_gambar);
-		    $('#update_deskripsi_galeri').val(data.deskripsi);
-		    $('#update_sub_deskripsi_galeri').val(data.sub_deskripsi);
-		    $('#update_foto_galeri').attr('src', '<?php echo base_url('assets/uploads/galeri/') ?>'+data.gambar);
-
-		  });
-		}
-
-		function prepare_delete_galeri(id_gambar) {
-			$('#delete_foto_galeri').empty();
-
-			$.getJSON('<?php echo base_url() ?>galeri/get_gambar_by_id/' + id_gambar, function (data) {
-				$('#delete_foto_galeri').attr('src', '<?php echo base_url('assets/uploads/galeri/') ?>' + data.gambar);
-				$('#delete_id_gambar').attr('href', '<?php echo base_url('index.php/galeri/hapus/') ?>' + data.id_gambar);
-			})
-		}
-	</script>
+	<?php
+		$this->load->view($JSON);
+	?>
 </body>
 
 </html>

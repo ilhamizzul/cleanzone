@@ -13,6 +13,7 @@ class Iklan extends CI_Controller {
 	{
 		if ($this->session->userdata('logged_in') == TRUE) {
 			$data['main_view'] = 'admin/iklan_view';
+			$data['JSON'] = 'JSON/iklan';
 			$data['get_iklan'] = $this->iklan_model->get_iklan();
 			$this->load->view('admin/index', $data);	
 		} else {

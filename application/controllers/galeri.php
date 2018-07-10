@@ -13,6 +13,7 @@ class Galeri extends CI_Controller {
 	{
 		if ($this->session->userdata('logged_in') == TRUE) {
 				$data['main_view'] = 'admin/galeri_view';
+				$data['JSON'] = 'JSON/galeri';
 				$data['get_galeri'] = $this->galeri_model->get_galeri();
 				$this->load->view('admin/index', $data);
 			} else {

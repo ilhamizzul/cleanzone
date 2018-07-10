@@ -4,6 +4,12 @@
       <h3 class="panel-title" style="text-align: center">Tabel Data Order</h3>
    </div>
    <div class="panel-body">
+      <form class="col-md-5" method="post" action="http://localhost/UKK/index.php/surat_masuk/search">
+          <div class="input-group">
+            <input type="text" value="Cari" name="search" class="form-control" placeholder="">
+            <span class="input-group-btn"><input type="submit" value="Go" class="btn btn-info" name=""></span>
+          </div>
+        </form>
       <button type="button" data-toggle="modal" data-target="#tambah" class="btn btn-success btn-md pull-right" style="margin-bottom: 10px;"><span class="fa fa-plus"></span> Tambah</button>
       <table class="table table-bordered">
          <thead>
@@ -38,10 +44,25 @@
                         echo '<span class="label label-success">'.$data->status.'</span>';
                      }
                      echo '</td>
-                     <td>
-                        <button type="button" data-toggle="modal" onclick="" data-target="#edit_status" class="btn btn-xs btn-primary">
+                     <td>';
+                     if ($data->status != 'selesai') {
+                       echo '
+                        <button type="button" data-toggle="modal" onclick="';
+                        if ($data->status == 'menunggu') {
+                           echo 'update_status_menunggu('.$data->id_order.')';
+                         } elseif ($data->status == 'dijemput') {
+                           echo 'update_status_dijemput('.$data->id_order.')';
+                         } elseif ($data->status == 'proses') {
+                           echo 'update_status_proses('.$data->id_order.')';
+                         } elseif ($data->status == 'diantar') {
+                           echo 'update_status_diantar('.$data->id_order.')';
+                         }
+                        echo '" data-target="#edit_status" class="btn btn-xs btn-primary">
                            Ubah Status
                         </button>
+                       ';
+                     }
+                     echo '
                         <button type="button" data-toggle="modal" onclick="prepare_update_order('.$data->id_order.')" data-target="#edit_order" class="btn btn-xs btn-warning">
                            Edit
                         </button>
@@ -142,6 +163,23 @@
      </div>
  </div>
 </div> 
+
+<div class="modal fade" id="edit_status" tabindex="-1" role="dialog">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="defaultModalLabel">Update Status Order <b class="invoice">lalala</b></h4>
+                  </div>
+                  <div class="modal-body">
+                      Ubah Status Order <b class="invoice">lala</b> Ke Status <b id="status_update">lala</b>? <br><br>
+                  </div>
+                  <div class="modal-footer">
+                      <a href="" id="ubah_status" class="btn btn-primary btn-xs">Ubah</a>
+                      <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Tutup</button>
+                  </div>
+              </div>
+          </div>
+      </div> 
 
 
       

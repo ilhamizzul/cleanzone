@@ -13,6 +13,7 @@ class Promosi extends CI_Controller {
 	{
 		if ($this->session->userdata('logged_in') == TRUE) {
 			$data['main_view'] = 'admin/promosi_view';
+			$data['JSON'] = 'JSON/promosi';
 			$data['get_promosi'] = $this->promosi_model->get_promosi();
 			$this->load->view('admin/index', $data);	
 		} else {

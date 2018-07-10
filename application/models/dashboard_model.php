@@ -21,6 +21,11 @@ class Dashboard_model extends CI_Model {
 	public function count_order()
 	{
 		return $this->db->count_all_results('tb_order');
+	}
+
+	public function count_marker()
+	{
+		return $this->db->count_all_results('tb_location');
 	}	
 
 }
