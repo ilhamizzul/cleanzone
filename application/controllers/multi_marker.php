@@ -51,6 +51,23 @@ class Multi_marker extends CI_Controller {
 		
 	}
 
+	public function ubah_marker()
+	{
+		if ($this->session->userdata('logged_in') == TRUE) {
+			if ($this->multi_marker_model->ubah_marker() == TRUE) {
+				$this->session->set_flashdata('success', 'Ubah Data Marker Berhasil');
+				redirect('multi_marker');
+			} else {
+				$this->session->set_flashdata('failed', 'Ubah Data Gagal, Silahkan Coba Lagi');
+				redirect('multi_marker');
+			}
+			
+		} else {
+			redirect('login');
+		}
+		
+	}
+
 	public function hapus($id)
 	{
 		if ($this->multi_marker_model->hapus_marker($id) == TRUE) {

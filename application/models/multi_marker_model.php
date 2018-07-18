@@ -13,7 +13,7 @@ class Multi_marker_model extends CI_Model {
 	{
 		return $this->db->where('id', $id)
 						->get('tb_location')
-						->result();
+						->row();
 	}
 
 	public function tambah_marker()
@@ -26,6 +26,26 @@ class Multi_marker_model extends CI_Model {
 		);
 
 		return $this->db->insert('tb_location', $data);
+
+		if ($this->db->affected_rows() > 0) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+		
+	}
+
+	public function ubah_marker()
+	{
+		$data = array(
+			'alamat' => $this->input->post('alamat'),
+			'nomor_telepon' => $this->input->post('nomor_telepon'),
+			'lat' => $this->input->post('lat'),
+			'lng' => $this->input->post('lng') 
+		);
+
+		return $this->db->where('id', $this->input->post('id_marker'))
+						->update('tb_location', $data);
 
 		if ($this->db->affected_rows() > 0) {
 			return TRUE;
