@@ -15,7 +15,7 @@ class Welcome extends CI_Controller {
 		$data['data_galeri'] = $this->galeri_model->get_galeri();
 		$data['data_iklan'] = $this->client_model->get_iklan();
 		$data['data_promosi'] = $this->client_model->get_promosi();
-		$this->load->view('client/index', $data);	
+		$this->load->view('client/index2', $data);	
 	}
 
 }
