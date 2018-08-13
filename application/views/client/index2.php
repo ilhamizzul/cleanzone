@@ -113,7 +113,7 @@
           <p class="cta-sub-title"><p data-aos="fade-in" data-aos-delay="400">Clean adalah sebuah perusahaan teknologi yang bertujuan untuk meningkatkan kesejahteraan pekerja pada sektor informal di Indonesia. Clean bertumpu pada 3 nilai pokok: Kecepatan, Inovasi, Dan Dampak Sosial. Clean telah mempunyai dari 100 cleanzone di Surabaya. Cleanzone terbagi menurut setiap wilayah kota Surabaya</p>
         </div>
         <div class="col-md-6">
-          <img src="<?php echo base_url() ?>/assets/img/client/laundry3.jpg" class="img-responsive" alt="">
+          <img src="<?php echo base_url() ?>/assets/img/client/laundry3.jpg" class="img-responsive img-shadow" alt="">
         </div>
         
       </div>
@@ -121,16 +121,91 @@
   </section>
 
   
-  <!--CTA1 END-->
+<section id="price" style="background-image: url(<?php echo base_url() ?>/assets/img/client/price.jpg);">
+  <div class="container">
+    <div class="row price-header">
+      <div class="col-md-12">
+        <h1>HARGA YANG KAMI TAWARKAN</h1>
+        <hr>
+        <p>Choose your price with no hidden cost and also you can request us for custom price</p>
+      </div>
+    </div>
+    <div class="row price-container">
+      <div class="col-md-4">
+        <div class="price-box">
+          <h3 class="price-title">Cuci Kering</h3>
+          <div class="price">
+            <h1><sup>Rp</sup></h1>
+            <p>5.000</p>
+            <span>/Kg</span>
+            <p class="price-desc">Choose your price with no hidden cost and also you can request us for custom price</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="price-box">
+          <h3 class="price-title">Cuci Kering + setrika</h3>
+          <div class="price">
+            <h1><sup>Rp</sup></h1>
+            <p>5.500</p>
+            <span>/Kg</span>
+            <p class="price-desc">Choose your price with no hidden cost and also you can request us for custom price</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="price-box">
+          <h3 class="price-title">Cuci sepatu</h3>
+          <div class="price">
+            <h1><sup>Rp</sup></h1>
+            <p>15.000</p>
+            <span>/Kg</span>
+            <p class="price-desc">Choose your price with no hidden cost and also you can request us for custom price</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+<section id="fact">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 fact-counter">
+        <h3>1450</h3>
+        <p>Dry Cleaning</p>
+      </div>
+
+      <div class="col-md-3 fact-counter">
+        <h3>1450</h3>
+        <p>Satisfied Client</p>
+      </div>
+
+      <div class="col-md-3 fact-counter">
+        <h3>3</h3>
+        <p>Years Expereince</p>
+      </div>
+
+      <div class="col-md-3 fact-counter">
+        <h3>1450</h3>
+        <p>Expert Worker</p>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
 
   <!--SERVICE START-->
   <div id="tes"  class="section-padding " style="background-color: white;">
     <div class="container">
       <div class="row">
         
-        <div class="page-title text-center" style="color: black;"><br><br><br>
+        <div class="page-title text-center" style="color: black;">
           <h1 style="color: #333;" data-aos-delay="400" data-aos="zoom-in">Why Clean Zone ?</h1>
-          <p style="color: #333;" data-aos-delay="400" data-aos="zoom-up">Clean Laundry Sangat tepecaya, Bermutu, Cepat, Rapi, Dan Bukab Laundry abal-abal <br>Berikut 3 keuntungan menguunakan layanan kami. </p>
+          <p style="color: #333;" data-aos-delay="400" data-aos="zoom-up">Clean Laundry Sangat tepecaya, Bermutu, Cepat, Rapi, Dan Bukan Laundry abal-abal <br>Berikut 3 keuntungan menguunakan layanan kami. </p>
           <hr class="pg-titl-bdr-btm"></hr>
         </div>
         <div class="col-md-4">
