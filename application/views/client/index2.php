@@ -266,6 +266,14 @@
       </div>
     </div>
   </div>
+  <div class="row map" style="background-color: white;">
+    <div class="col-md-6" id="googleMap" style="height: 400px;"> </div>
+    
+    <div class="page-title text-center col-md-6" style="padding-top: 80px;"> 
+        <h1> Our Location</h1>
+        <p class="col-md-10 col-md-offset-1" style="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
   <!--CONTACT END-->
 <br><br><br><br>
   <!--FOOTER START-->
@@ -315,12 +323,22 @@
       </div>
     </div>
   </div>
+  <script>
+    function myMap() {
+    var mapProp= {
+        center:new google.maps.LatLng(51.508742,-0.120850),
+        zoom:5,
+    };
+    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    }
+  </script>
   <script src="<?php echo base_url() ?>assets/scripts/jquery.min.js"></script>
   <script src="<?php echo base_url() ?>assets/scripts/jquery.easing.min.js"></script>
   <script src="<?php echo base_url() ?>assets/scripts/bootstrap.min.js"></script>
   <script type="text/javascript" src="<?php echo base_url() ?>assets/scripts/slick.min.js"></script>
   <script type="text/javascript" src="<?php echo base_url() ?>assets/scripts/custom.js"></script>
   <script src="<?php echo base_url() ?>assets/script/contactform/contactform.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhtWbUylveurtcfClbpiK1hwkCqMt2ceI&callback=myMap"></script>
 
 
 
