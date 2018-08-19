@@ -5,7 +5,7 @@
    </div>
    <div class="panel-body">
       <button type="button" data-toggle="modal" data-target="#tambah" class="btn btn-success btn-md pull-right" style="margin-bottom: 10px;"><span class="fa fa-plus"></span> Tambah</button>
-      <table class="table table-bordered">
+      <table id="datatable" class="display">
          <thead>
             <tr>
                <th class="col-md-1">No</th>
@@ -125,6 +125,9 @@
            </div>
        </div>
       </div> 
+      <script>
+        document.title = "Clean Laundry | Marker";        
+      </script>
 
 
       

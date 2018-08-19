@@ -4,14 +4,8 @@
       <h3 class="panel-title" style="text-align: center">Tabel Data Order</h3>
    </div>
    <div class="panel-body">
-      <form class="col-md-5" method="post" action="http://localhost/UKK/index.php/surat_masuk/search">
-          <div class="input-group">
-            <input type="text" value="Cari" name="search" class="form-control" placeholder="">
-            <span class="input-group-btn"><input type="submit" value="Go" class="btn btn-info" name=""></span>
-          </div>
-        </form>
       <button type="button" data-toggle="modal" data-target="#tambah" class="btn btn-success btn-md pull-right" style="margin-bottom: 10px;"><span class="fa fa-plus"></span> Tambah</button>
-      <table class="table table-bordered">
+      <table id="datatable" class="display">
          <thead>
             <tr>
                <th class="col-md-2">Invoice Order</th>
@@ -180,6 +174,10 @@
               </div>
           </div>
       </div> 
+
+      <script>
+        document.title = "Clean Laundry | Order";        
+      </script>
 
 
       
