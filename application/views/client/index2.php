@@ -369,7 +369,7 @@
   </section>
   <section id="maps">
     <div class="map" style="background-color: white;">
-      <div class="col-md-12" id="googleMap" style="height: 400px;"> </div>
+      <div class="col-md-12" id="googleMap" style="height: 500px;"> </div>
     </div>
   </section>
   
@@ -427,11 +427,36 @@
 
   <script>
     function myMap() {
-    var mapProp= {
-        center:new google.maps.LatLng(51.508742,-0.120850),
-        zoom:5,
-    };
-    var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    map = new google.maps.Map(document.getElementById('googleMap'), {
+          zoom: 14,
+          center: new google.maps.LatLng(-7.2898104, 112.8024243),
+          mapTypeId: 'roadmap'
+        });  
+    // var mapProp= {
+    //     center:new google.maps.LatLng(51.508742,-0.120850),
+    //     zoom:5,
+    // };
+     var features = [
+       <?php 
+        foreach ($data_lokasi as $data) {
+          echo '
+            {
+              position: new google.maps.LatLng('.$data->lat.', '.$data->lng.')
+            },
+          ';
+        }
+       ?> 
+      
+    ];
+    // var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+    var marker_icon = '<?php echo base_url(); ?>assets/img/client/marker.png';
+    features.forEach(function(feature) {
+          var marker = new google.maps.Marker({
+            position: feature.position,
+            icon: marker_icon,
+            map: map
+          });
+        });
     }
   </script>
   <!-- JQUERY -->

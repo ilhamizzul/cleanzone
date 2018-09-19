@@ -8,6 +8,7 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 		$this->load->model('client/client_model');
 		$this->load->model('galeri_model');
+		$this->load->model('multi_marker_model');
 	}
 
 	public function index()
@@ -15,6 +16,7 @@ class Welcome extends CI_Controller {
 		$data['data_galeri'] = $this->galeri_model->get_galeri();
 		$data['data_iklan'] = $this->client_model->get_iklan();
 		$data['data_promosi'] = $this->client_model->get_promosi();
+		$data['data_lokasi'] = $this->multi_marker_model->get_marker();
 		$this->load->view('client/index2', $data);	
 	}
 
