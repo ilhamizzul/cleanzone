@@ -118,6 +118,12 @@
     
   };
 
+  // Collapse now if page is not at top
+  navbarCollapse();
+  // Collapse the navbar when page is scrolled
+  $(window).scroll(navbarCollapse);
+
+
   $('#mainNav .navbar-nav .nav-item .nav-link').hover(function() {
     $(this).addClass('active')
   }, function() {

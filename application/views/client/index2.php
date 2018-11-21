@@ -6,6 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- FONT AWESOME -->
   <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/animate/animate.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/css/aos/dist/aos.css">
@@ -110,7 +111,7 @@
         </div>
         <div class="col-md-6" id="about-desc">
           <h1 class="cta-title bold " data-aos="zoom-in">Tentang Clean</h1>
-          <p data-aos="fade-in" data-aos-delay="400">Clean adalah sebuah perusahaan teknologi yang bertujuan untuk meningkatkan kesejahteraan pekerja pada sektor informal di Indonesia. Clean bertumpu pada 3 nilai pokok: Kecepatan, Inovasi, Dan Dampak Sosial.</p><blockquote><p> Clean telah mempunyai dari 100 cleanzone di Surabaya.</p></blockquote><p> Cleanzone terbagi menurut setiap wilayah kota Surabaya</p>
+          <p data-aos="fade-in" data-aos-delay="400">Clean adalah platform jasa laundri yang berbasis aplikasi Android dan Ios digunakan untuk melayani segala kebutuhan cucian anda. Bagi anda ibu rumah tangga yang ingin memiliki bisnis sendiri, pebisnis yang ingin memiliki penghasilan tambahan, pemilik kos-kosan yang ingin memfasilitasi penghuni, bahkan anda yang memiliki usaha laundri dan ingin memperluas pasar. Clean partner yang tepat untuk anda. </p>
           <div class="row">
             <div class="col-md-12 text-center">
               <img src="<?php echo base_url() ?>assets/img/client/signature.png" style="max-height: 50px" alt="">
@@ -259,38 +260,65 @@
         <div class="container">
           <div class="row">
             <div class="page-title text-center col-md-12">
-              <h1  data-aos-delay="400" data-aos="zoom-in" class="text-uppercase">Why Clean Zone ?</h1>
-              <hr class="pg-titl-bdr-btm"></hr>
-              <p style="color: #333;" class="mb-3" data-aos-delay="400" data-aos="zoom-up">Clean Laundry Sangat tepecaya, Bermutu, Cepat, Rapi, Dan Bukan Laundry abal-abal <br>Berikut 3 keuntungan menguunakan layanan kami. </p>
+              <h1  data-aos-delay="400" data-aos="zoom-in" class="text-uppercase">Keunggulan Clean </h1>
+              <hr class="pg-titl-bdr-btm">
+              <p style="color: #69707B;" class="mb-3" data-aos-delay="400" data-aos="zoom-up">Clean memiliki banyak sekali keunggulan</p>
             </div>
             <div class="col-md-4">
-              <div class="service-box" data-aos="fade-right" data-aos-delay="400">
-                <div class="service-icon"><img src="<?php echo base_url() ?>assets/img/icons/gold-clock.svg"></div>
+              <div class="service-box" data-aos="fade-up" data-aos-delay="800">
+                <div class="service-icon"><i class="fa fa-calendar fa-2x"></i></div>
                 <div class="service-text">
-                  <h2 style="color: #333;">Proses Cepat</h2>
-                  <p> Kami Menggunakan Mesin Teknoogi super canggih dan sangat bermutu </p>
+                  <h4 style="color: #333">Jam Pelayanan</h4>
+                  <p>Selalu siap melayani anda 24 jam</p>
                 </div>
               </div>
             </div>
             <div class="col-md-4">
               <div class="service-box" data-aos="fade-up" data-aos-delay="800">
-                <div class="service-icon"><img src="<?php echo base_url() ?>assets/img/icons/status5mini.svg" style="width: 60px; height: 60px; margin-top: -6px; margin-left: 1px;"></div>
+                <div class="service-icon"><i class="fa fa-handshake-o" aria-hidden="true" style="font-size: 1.5em;"></i>
+</div>
                 <div class="service-text">
-                  <h2 style="color: #333">Tepat Waktu</h2>
-                  <p> Kami selalu tepat waktu dalam proses pencucian jadi tidak akan ada overloud :v.</p>
+                  <h4 style="color: #333">Transparan</h4>
+                  <p>Semua transaksi yang dilakukan diberikan dengan transparan dan fair</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="service-box" data-aos="fade-up" data-aos-delay="800">
+                <div class="service-icon"><i class="fa fa-dollar fa-2x"></i></div>
+                <div class="service-text">
+                  <h4 style="color: #333">Terjangkau</h4>
+                  <p>Memiliki harga yang terjangkau</p>
                 </div>
               </div>
             </div>
             <div class="col-md-4">
               <div class="service-box" data-aos="fade-left" data-aos-delay="1200">
-                <div class="service-icon"><img src="<?php echo base_url() ?>assets/img/icons/status3mini.svg" style="width: 60px; height: 60px; margin-top: -6px; margin-left: 1px;"style="width: 60px; height: 60px; margin-top: -6px; margin-left: 2px;"></div>
+                <div class="service-icon"><i class="fa fa-users fa-2x"></i></div>
                 <div class="service-text">
-                  <h2 style="color: #333;">Harum & Rapih</h2>
-                  <p> Kami menggunakan pengharum yang sangat bermutu dan berkualitas dan selalu rapi untuk anu :v .</p>
+                  <h4 style="color: #333;">Pelayanan</h4>
+                  <p>Selalu siap melayani dengan tepat waktu.</p>
                 </div>
               </div>
             </div>
-
+            <div class="col-md-4">
+              <div class="service-box" data-aos="fade-left" data-aos-delay="1200">
+                <div class="service-icon"><i class="fa fa-map-marker fa-2x"></i></div>
+                <div class="service-text">
+                  <h4 style="color: #333;">Jangkauan</h4>
+                  <p>Memiliki jangkauan yang luas, dengan adanya ± 100 titik laundri di Surabaya.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="service-box" data-aos="fade-left" data-aos-delay="1200">
+                <div class="service-icon"><i class="fa fa-thumbs-up fa-2x"></i></div>
+                <div class="service-text">
+                  <h4 style="color: #333;">Kualitas</h4>
+                  <p>Memiliki kualitas kerja dan pelayanan yang baik.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
   </section>
@@ -321,48 +349,41 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center page-title">
-              <h1 class=" text-uppercase" data-aos="zoom-in">Frequently asked question</h1>
+              <h1 class=" text-uppercase" data-aos="zoom-in">Kenapa Clean ?</h1>
               <hr class="pg-titl-bdr-btm"></hr>
-               <p style="color: #333;" data-aos-delay="400" data-aos="zoom-up">Clean Laundry Sangat tepecaya, Bermutu, Cepat, Rapi, Dan Bukan Laundry abal-abal <br>Berikut 3 keuntungan menguunakan layanan kami. </p>
+               <p style="color: #69707B;" data-aos-delay="400" data-aos="zoom-up">Clean bertujuan untuk membantu meningkatkan kesejahteraan penduduk di Indonesia khususnya pekerja pada sektor informal. Untuk  mewujudkan tujuan tersebut kami mengusung nilai-nilai penting yaitu kecepatan, teknologi dan inovasi, serta dampak positif sosial bagi sekitar. </p>
             </div>
         </div>  
         <div class="row" style="padding-top: 20px;">
-            <div class="col-md-6">
-              <div class="card">
+            <div class="col-md-4" style="margin-bottom:20px">
+              <div class="card align-items-stretch">
                 <div class="card-header">
-                  Lorem Ipsum Dolor Sit Amet ?
+                  Kecepatan
                 </div>
                 <div class="card-body">
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  Lorem Ipsum Dolor Sit Amet ?
-                </div>
-                <div class="card-body">
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text">memberikan pelayanan yang cepat dan tepat bagi pelanggan</p>
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="card">
+            <div class="col-md-4" style="margin-bottom:20px">
+              <div class="card align-items-stretch">
                 <div class="card-header">
-                  Lorem Ipsum Dolor Sit Amet ?
+                  Teknologi dan Inovasi
                 </div>
                 <div class="card-body">
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text">Selalu berkembang dari pengalaman dengan teknologi baru.</p>
                 </div>
               </div>
-              <div class="card">
+            </div>
+            <div class="col-md-4" style="margin-bottom:20px">
+              <div class="card align-self-stretch">
                 <div class="card-header">
-                  Lorem Ipsum Dolor Sit Amet ?
+                  Dampak positif sosial
                 </div>
                 <div class="card-body">
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <p class="card-text">Membantu meningkatkan kesejahteraan pekerja pada sektor informal dengan menciptakan pasar yang lebih luas dan efisien, khususnya mitra dan agen kami.</p>
                 </div>
               </div>
-              
             </div>
         </div>
     </div>
